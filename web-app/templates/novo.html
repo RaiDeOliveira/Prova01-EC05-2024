@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Aplicação Web</title>
+</head>
+<body>
+    <h1>Registre aqui o novo caminho para o braço mecânico!!!</h1>
+    <p>Registre cada uma das coordenadas do ponto ao qual você deseja que o braço mecânico se desloque</p>
+    <form action="/pegar_caminho" method="post">
+        <input type="text" name="caminhoNovoID" placeholder="ID do caminho">
+        <input type="text" name="caminhoNovoX" placeholder="Coordenada X">
+        <input type="text" name="caminhoNovoY" placeholder="Coordenada Y">
+        <input type="text" name="caminhoNovoZ" placeholder="Coordenada Z">
+        <input type="text" name="caminhoNovoR" placeholder="Coordenada R">
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
