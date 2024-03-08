@@ -17,8 +17,10 @@ def pegar_caminho(caminhoNovoID=None, caminhoNovoX=None, caminhoNovoY=None, cami
         caminhoNovoZ = request.form.get("caminhoNovoZ")
         caminhoNovoR = request.form.get("caminhoNovoR")
         db.insert({"ID": caminhoNovoID, "X": caminhoNovoX, "Y": caminhoNovoY, "Z": caminhoNovoZ, "R": caminhoNovoR})
+        caminhos = db.all()
+        return render_template("listaCaminhosNovo.html", caminhos=caminhos)
     caminhos = db.all()
-    return listas_caminhos()
+    return render_template("listaCaminhosNovo.html", caminhos=caminhos)
 
 # Rota para enviar um novo caminho
 @app.route("/novo")
@@ -28,7 +30,8 @@ def novo():
 # Rota para exibir lista de caminhos
 @app.route("/listas_caminhos")
 def listas_caminhos():
-    render_template("listaCaminhos.html")
+    caminhos = db.all()
+    return render_template("listaCaminhos.html", caminhos=caminhos)
 
 # Roda a aplicação web localmente quando este arquivo é executado
 if __name__ == "__main__":
